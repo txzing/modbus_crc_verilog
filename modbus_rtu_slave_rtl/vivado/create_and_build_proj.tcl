@@ -8,7 +8,7 @@ set current_vivado_version [version -short]
 
 if {[file exists $project_name/$project_name.xpr] == 0 } {
 # Create a new project
-create_project $project_name ./$project_name -part xczu2cg-sfvc784-1-e
+create_project $project_name ./$project_name -part xc7a35tfgg484-2
 set_property target_language Verilog [current_project]
 
 # Create 'sources_1' fileset (if not found)

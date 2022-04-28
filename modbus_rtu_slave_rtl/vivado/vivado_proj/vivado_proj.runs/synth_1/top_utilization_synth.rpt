@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Mon Apr 25 15:34:01 2022
+| Date         : Thu Apr 28 17:23:06 2022
 | Host         : TX running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
@@ -30,15 +30,15 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  823 |     0 |     20800 |  3.96 |
-|   LUT as Logic             |  811 |     0 |     20800 |  3.90 |
+| Slice LUTs*                |  829 |     0 |     20800 |  3.99 |
+|   LUT as Logic             |  817 |     0 |     20800 |  3.93 |
 |   LUT as Memory            |   12 |     0 |      9600 |  0.13 |
 |     LUT as Distributed RAM |   12 |     0 |           |       |
 |     LUT as Shift Register  |    0 |     0 |           |       |
-| Slice Registers            |  806 |     0 |     41600 |  1.94 |
-|   Register as Flip Flop    |  806 |     0 |     41600 |  1.94 |
+| Slice Registers            |  816 |     0 |     41600 |  1.96 |
+|   Register as Flip Flop    |  816 |     0 |     41600 |  1.96 |
 |   Register as Latch        |    0 |     0 |     41600 |  0.00 |
-| F7 Muxes                   |    2 |     0 |     16300 |  0.01 |
+| F7 Muxes                   |   16 |     0 |     16300 |  0.10 |
 | F8 Muxes                   |    0 |     0 |      8150 |  0.00 |
 +----------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 7     |          Yes |           - |          Set |
-| 761   |          Yes |           - |        Reset |
+| 22    |          Yes |           - |          Set |
+| 756   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 38    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -151,21 +151,21 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDCE     |  761 |        Flop & Latch |
-| LUT6     |  288 |                 LUT |
-| LUT2     |  287 |                 LUT |
-| LUT3     |  228 |                 LUT |
-| LUT5     |  160 |                 LUT |
-| LUT4     |  123 |                 LUT |
-| CARRY4   |   48 |          CarryLogic |
+| FDCE     |  756 |        Flop & Latch |
+| LUT6     |  418 |                 LUT |
+| LUT3     |  186 |                 LUT |
+| LUT4     |  134 |                 LUT |
+| LUT2     |  134 |                 LUT |
+| LUT5     |  117 |                 LUT |
+| CARRY4   |   56 |          CarryLogic |
 | FDRE     |   38 |        Flop & Latch |
+| FDPE     |   22 |        Flop & Latch |
 | RAMD32   |   18 |  Distributed Memory |
-| FDPE     |    7 |        Flop & Latch |
+| MUXF7    |   16 |               MuxFx |
 | RAMS32   |    6 |  Distributed Memory |
 | IBUF     |    6 |                  IO |
 | LUT1     |    5 |                 LUT |
 | OBUF     |    2 |                  IO |
-| MUXF7    |    2 |               MuxFx |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
@@ -175,8 +175,6 @@ Table of Contents
 
 +----------+------+
 | Ref Name | Used |
-+----------+------+
-| ila_0    |    1 |
 +----------+------+
 
 

@@ -7,12 +7,12 @@ module uart_byte_rx #
     parameter           BAUD_RATE  = 'd9600    //
 )
 (
-    input               clk_in,			// system clock
-    input               rst_n_in,		// system reset, active low
+    input               clk     ,			// system clock
+    input               rst_n   ,		// system reset, active low
 
-    output  reg [7:0]   rx_data,		// data need to transfer
+    output  reg [7:0]   rx_data ,		// data need to transfer
     output  reg         rx_state,       // recieving duration
-    output	reg         rx_done,        // pos-pulse for 1 tick indicates 1 byte transfer done
+    output	reg         rx_done ,        // pos-pulse for 1 tick indicates 1 byte transfer done
     input		        rs232_rx		// uart transfer pin
 );
 
@@ -27,8 +27,8 @@ reg [7:0] bps_cnt;
 
 reg	rs232_rx0,rs232_rx1,rs232_rx2;	
 //Detect negedge of rs232_rx
-always @ (posedge clk_in or negedge rst_n_in) begin
-	if(!rst_n_in) begin
+always @ (posedge clk or negedge rst_n) begin
+	if(!rst_n) begin
 		rs232_rx0 <= `UD 1'b0;
 		rs232_rx1 <= `UD 1'b0;
 		rs232_rx2 <= `UD 1'b0;
@@ -41,9 +41,9 @@ end
 wire	neg_rs232_rx;
 assign  neg_rs232_rx = rs232_rx2 & ~rs232_rx1;	
 
-always@(posedge clk_in or negedge rst_n_in)
+always@(posedge clk or negedge rst_n)
 begin
-	if(!rst_n_in)
+	if(!rst_n)
     begin
 		rx_state <= `UD 1'b0;
     end
@@ -65,9 +65,9 @@ begin
 end
 
 reg [15:0]  baud_rate_cnt;
-always@(posedge clk_in or negedge rst_n_in)
+always@(posedge clk or negedge rst_n)
 begin
-    if(!rst_n_in)
+    if(!rst_n)
     begin
         baud_rate_cnt <= `UD 16'd0;
     end
@@ -93,9 +93,9 @@ end
     
 // generate bps_clk signal
 reg bps_clk;
-always @ (posedge clk_in or negedge rst_n_in)
+always @ (posedge clk or negedge rst_n)
 begin
-	if(!rst_n_in) 
+	if(!rst_n) 
     begin
 		bps_clk <= `UD 1'b0;
     end
@@ -114,9 +114,9 @@ end
 
 //bps counter
 
-always@(posedge clk_in or negedge rst_n_in)
+always@(posedge clk or negedge rst_n)
 begin
-    if(!rst_n_in)	
+    if(!rst_n)	
     begin
 	    bps_cnt <= `UD 8'd0;
     end
@@ -137,9 +137,9 @@ begin
     end
 end
 
-always@(posedge clk_in or negedge rst_n_in)
+always@(posedge clk or negedge rst_n)
 begin
-	if(!rst_n_in)
+	if(!rst_n)
     begin
 		rx_done <= `UD 1'b0;
     end
@@ -158,9 +158,9 @@ end
 
 
 		
-always@(posedge clk_in or negedge rst_n_in)
+always@(posedge clk or negedge rst_n)
 begin
-	if(!rst_n_in)
+	if(!rst_n)
     begin
 		START_BIT <= `UD 3'd0;
 		rx_data_r[0] <= `UD 3'd0;
@@ -251,9 +251,9 @@ begin
 	end
 end
 
-always@(posedge clk_in or negedge rst_n_in)
+always@(posedge clk or negedge rst_n)
 begin
-	if(!rst_n_in)
+	if(!rst_n)
     begin
 		rx_data <= `UD 8'd0;
     end
@@ -275,17 +275,5 @@ begin
     end
 end
 
-//ila_1 ila_inst (
-//	.clk(clk_in), // input wire clk
-//
-//	.probe0(rx_done),
-//	.probe1(rx_state),
-//	.probe2(rs232_rx),
-//	//.probe3(rx_data)
-//	.probe3({rx_data_r[7][2],rx_data_r[6][2],rx_data_r[5][2],rx_data_r[4][2],rx_data_r[3][2],rx_data_r[2][2],rx_data_r[1][2],rx_data_r[0][2]}),
-//	.probe4(bps_cnt),
-//	.probe5(bps_clk),
-//	.probe6(neg_rs232_rx)
-//);
 
 endmodule

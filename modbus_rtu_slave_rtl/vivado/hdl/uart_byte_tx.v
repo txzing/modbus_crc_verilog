@@ -7,15 +7,15 @@ module uart_byte_tx #
     parameter       BAUD_RATE  = 'd9600    //
 )
 (
-    input           clk,			// system clock
-    input           rst_n,		// system reset, active low
+    input           clk     ,	// system clock
+    input           rst_n   ,	// system reset, active low
 
-    input           tx_start,       // start transfer with pos edge
-    input   [7:0]	tx_data,		// data need to transfer
+    input           tx_start,   // start transfer with pos edge
+    input   [7:0]	tx_data ,	// data need to transfer
 
-    output  reg     tx_state,       // sending duration
-    output	reg     tx_done,        // pos-pulse for 1 tick indicates 1 byte transfer done
-    output	reg		rs232_tx		// uart transfer pin
+    output  reg     tx_state,   // sending duration
+    output	reg     tx_done ,   // pos-pulse for 1 tick indicates 1 byte transfer done
+    output	reg		rs232_tx	// uart transfer pin
 );
 
 

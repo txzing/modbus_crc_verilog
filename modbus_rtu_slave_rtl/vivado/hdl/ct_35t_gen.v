@@ -7,137 +7,61 @@ module ct_35t_gen #
     parameter           BAUD_RATE  = 'd9600    //
 )
 (
-    input               clk_in,			// system clock
-    input               rst_n_in,		// system reset, active low
+    input    clk         ,// system clock
+    input    rst_n       ,// system reset, active low
 
-    input               rx_done,        // pos-pulse for 1 tick indicates 1 byte transfer done
-    input               rx_state,
+    input    rx_done     ,// pos-pulse for 1 tick indicates 1 byte transfer done
+    input    rx_state    ,
 
-    output  reg         rx_new_frame       // if intervel >3.5T == 1
+    output   rx_new_frame // if intervel >3.5T == 1
 );
 
 localparam BPS_PARAM = (CLK_FREQ/BAUD_RATE);
-reg [5:0] bps_cnt;
+parameter  DELAY_CNT = 35;
 
-reg cnt_en;
-always@(posedge clk_in or negedge rst_n_in)
+reg         cnt_en_flag;//计数器
+reg [19:0]  bps_cnt    ;//每一帧数据发送完毕后延时一段时间
+wire        add_bps_cnt;
+wire        end_bps_cnt;
+
+always@(posedge clk or negedge rst_n)
 begin
-    if(!rst_n_in)
+    if(!rst_n)
     begin
-        cnt_en <= `UD 1'b0;
+        cnt_en_flag <= `UD 1'b0;
     end
     else
     begin
         if(rx_done)
         begin
-            cnt_en <= `UD 1'b1;
+            cnt_en_flag <= `UD 1'b1;
         end
-        else if(rx_state||bps_cnt>=6'd35)
+        else if(rx_state||end_bps_cnt)
         begin
-            cnt_en <= `UD 1'b0;
+            cnt_en_flag <= `UD 1'b0;
         end
     end
 end
 
-reg [15:0]  baud_rate_cnt;
-always@(posedge clk_in or negedge rst_n_in)
-begin
-    if(!rst_n_in)
-    begin
-        baud_rate_cnt <= `UD 16'd0;
-    end
-    else
-    begin
-        if(cnt_en)
-        begin
-            if(baud_rate_cnt >= BPS_PARAM - 1)
-            begin
-                baud_rate_cnt <= `UD 16'd0;
+always @(posedge clk or negedge rst_n)begin 
+   if(!rst_n)begin
+        bps_cnt <= `UD 0;
+    end 
+    else if(add_bps_cnt)begin 
+            if(end_bps_cnt)begin 
+                bps_cnt <= `UD 0;
             end
-            else
-            begin
-                baud_rate_cnt <= `UD baud_rate_cnt + 1'b1;
-            end
-        end
-        else
-        begin
-            baud_rate_cnt <= `UD 16'd0;
-        end
+            else begin 
+                bps_cnt <= `UD bps_cnt + 1;
+            end 
     end
-end
+   else  begin
+       bps_cnt <= `UD 0;
+    end
+end 
 
-// generate bps_clk signal
-reg bps_clk;
-always @ (posedge clk_in or negedge rst_n_in)
-begin
-	if(!rst_n_in) 
-    begin
-		bps_clk <= `UD 1'b0;
-    end
-	else
-    begin
-        if(baud_rate_cnt >= BPS_PARAM - 1 )
-        begin
-		    bps_clk <= `UD 1'b1;	
-        end
-	    else 
-        begin
-		    bps_clk <= `UD 1'b0;
-        end
-    end
-end
-
-//bps counter
-always@(posedge clk_in or negedge rst_n_in)
-begin
-    if(!rst_n_in)	
-    begin
-	    bps_cnt <= `UD 6'd0;
-    end
-    else
-    begin
-        if(bps_cnt>=6'd35)
-        begin
-	        bps_cnt <= `UD 6'd0;
-        end
-        else
-        begin
-            if(cnt_en)
-            begin
-                if(bps_clk)
-                begin
-	                bps_cnt <= `UD bps_cnt + 1'b1;
-                end
-                else
-                begin
-	                bps_cnt <= `UD bps_cnt;
-                end
-            end
-            else
-            begin
-                bps_cnt <= `UD 6'd0;
-            end
-        end
-    end
-end
-
-always@(posedge clk_in or negedge rst_n_in)
-begin
-    if(!rst_n_in)	
-    begin
-	    rx_new_frame <= `UD 1'b0;
-    end
-    else
-    begin
-        if(bps_cnt>=6'd35)
-        begin
-	        rx_new_frame <= `UD 1'b1;
-        end
-        else
-        begin
-	        rx_new_frame <= `UD 1'b0;
-        end
-    end
-end
+assign add_bps_cnt = cnt_en_flag;
+assign end_bps_cnt = bps_cnt && bps_cnt >= DELAY_CNT*(BPS_PARAM-1);
+assign rx_new_frame = end_bps_cnt;
 
 endmodule

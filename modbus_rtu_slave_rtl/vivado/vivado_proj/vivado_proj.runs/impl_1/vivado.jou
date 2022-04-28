@@ -2,11 +2,11 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Mon Apr 25 17:27:31 2022
-# Process ID: 21812
-# Current directory: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/impl_1
+# Start of session at: Thu Apr 28 17:23:13 2022
+# Process ID: 10500
+# Current directory: C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/impl_1
 # Command line: vivado.exe -log top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top.tcl -notrace
-# Log file: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/impl_1/top.vdi
-# Journal file: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/impl_1\vivado.jou
+# Log file: C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/impl_1/top.vdi
+# Journal file: C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
 source top.tcl -notrace

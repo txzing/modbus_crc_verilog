@@ -11,7 +11,7 @@
 
 source top.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/ip_repo'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2020.2/data/ip'.
 Command: synth_design -top top -part xc7a35tfgg484-2
 Starting synth_design
@@ -20,158 +20,136 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tfgg484-2
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 12820
-WARNING: [Synth 8-1935] empty port in module declaration [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/DPRAM.v:21]
-WARNING: [Synth 8-2507] parameter declaration becomes local in reset_module with formal parameter declaration list [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/reset_module.v:17]
+INFO: [Synth 8-7075] Helper process launched with PID 4644
+WARNING: [Synth 8-1935] empty port in module declaration [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/DPRAM.v:21]
+WARNING: [Synth 8-2507] parameter declaration becomes local in ct_15t_gen with formal parameter declaration list [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/ct_15t_gen.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in ct_35t_gen with formal parameter declaration list [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/ct_35t_gen.v:20]
+WARNING: [Synth 8-2507] parameter declaration becomes local in reset_module with formal parameter declaration list [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/reset_module.v:17]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1200.457 ; gain = 38.035
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1182.676 ; gain = 21.125
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/top.v:23]
-INFO: [Synth 8-6157] synthesizing module 'reset_module' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/reset_module.v:5]
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'reset_module' [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/reset_module.v:5]
 	Parameter SYS_CYCLE bound to: 20 - type: integer 
 	Parameter MS_WAIT_TIME bound to: 1000000 - type: integer 
 	Parameter RST_MS_MAX bound to: 20 - type: integer 
 	Parameter MS_CNT_MAX bound to: 49999 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'reset_module' (1#1) [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/reset_module.v:5]
-INFO: [Synth 8-6157] synthesizing module 'modbus_rtu_slave_top' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/modbus_rtu_slave_top.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'reset_module' (1#1) [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/reset_module.v:5]
+INFO: [Synth 8-6157] synthesizing module 'modbus_rtu_slave_top' [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/modbus_rtu_slave_top.v:4]
 	Parameter CLK_FREQ bound to: 50000000 - type: integer 
 	Parameter BAUD_RATE bound to: 115200 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'uart_byte_rx' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/uart_byte_rx.v:4]
+INFO: [Synth 8-6157] synthesizing module 'uart_byte_rx' [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/uart_byte_rx.v:4]
 	Parameter CLK_FREQ bound to: 50000000 - type: integer 
 	Parameter BAUD_RATE bound to: 115200 - type: integer 
 	Parameter BPS_PARAM bound to: 27 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'uart_byte_rx' (2#1) [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/uart_byte_rx.v:4]
-INFO: [Synth 8-6157] synthesizing module 'ct_35t_gen' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/ct_35t_gen.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'uart_byte_rx' (2#1) [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/uart_byte_rx.v:4]
+INFO: [Synth 8-6157] synthesizing module 'ct_35t_gen' [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/ct_35t_gen.v:4]
 	Parameter CLK_FREQ bound to: 50000000 - type: integer 
 	Parameter BAUD_RATE bound to: 115200 - type: integer 
 	Parameter BPS_PARAM bound to: 434 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'ct_35t_gen' (3#1) [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/ct_35t_gen.v:4]
-INFO: [Synth 8-6157] synthesizing module 'ct_15t_gen' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/ct_15t_gen.v:4]
+	Parameter DELAY_CNT bound to: 35 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ct_35t_gen' (3#1) [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/ct_35t_gen.v:4]
+INFO: [Synth 8-6157] synthesizing module 'ct_15t_gen' [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/ct_15t_gen.v:4]
 	Parameter CLK_FREQ bound to: 50000000 - type: integer 
 	Parameter BAUD_RATE bound to: 115200 - type: integer 
 	Parameter BPS_PARAM bound to: 434 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'ct_15t_gen' (4#1) [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/ct_15t_gen.v:4]
-INFO: [Synth 8-6157] synthesizing module 'frame_rx' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/frame_rx.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'frame_rx' (5#1) [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/frame_rx.v:4]
-INFO: [Synth 8-6157] synthesizing module 'modbus_crc' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/modbus_crc.v:4]
-	Parameter BYTES bound to: 6 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'modbus_crc' (6#1) [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/modbus_crc.v:4]
-INFO: [Synth 8-6157] synthesizing module 'exceptions' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/exceptions.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'exceptions' (7#1) [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/exceptions.v:4]
-INFO: [Synth 8-6157] synthesizing module 'func_hander' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/func_handler.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'func_hander' (8#1) [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/func_handler.v:4]
-INFO: [Synth 8-6157] synthesizing module 'DPRAM' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/DPRAM.v:4]
+	Parameter DELAY_CNT bound to: 15 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ct_15t_gen' (4#1) [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/ct_15t_gen.v:4]
+INFO: [Synth 8-6157] synthesizing module 'frame_rx' [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/frame_rx.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'frame_rx' (5#1) [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/frame_rx.v:4]
+INFO: [Synth 8-6157] synthesizing module 'exceptions' [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/exceptions.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'exceptions' (6#1) [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/exceptions.v:4]
+INFO: [Synth 8-6157] synthesizing module 'func_hander' [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/func_handler.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'func_hander' (7#1) [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/func_handler.v:4]
+INFO: [Synth 8-6157] synthesizing module 'DPRAM' [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/DPRAM.v:4]
 	Parameter A_WIDTH bound to: 2 - type: integer 
 	Parameter D_WIDTH bound to: 16 - type: integer 
-WARNING: [Synth 8-308] ignoring empty port [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/DPRAM.v:22]
-INFO: [Synth 8-6155] done synthesizing module 'DPRAM' (9#1) [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/DPRAM.v:4]
-WARNING: [Synth 8-689] width (8) of port connection 'ADDRA' does not match port width (2) of module 'DPRAM' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/modbus_rtu_slave_top.v:214]
-WARNING: [Synth 8-689] width (8) of port connection 'ADDRB' does not match port width (2) of module 'DPRAM' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/modbus_rtu_slave_top.v:215]
-WARNING: [Synth 8-7023] instance 'DPRAM_inst0' of module 'DPRAM' has 13 connections declared, but only 12 given [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/modbus_rtu_slave_top.v:206]
-INFO: [Synth 8-6157] synthesizing module 'tx_handler' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/tx_handler.v:4]
-INFO: [Synth 8-6157] synthesizing module 'modbus_crc__parameterized0' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/modbus_crc.v:4]
-	Parameter BYTES bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'modbus_crc__parameterized0' (9#1) [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/modbus_crc.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'tx_handler' (10#1) [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/tx_handler.v:4]
-INFO: [Synth 8-6157] synthesizing module 'tx_response' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/tx_response.v:4]
+WARNING: [Synth 8-308] ignoring empty port [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/DPRAM.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'DPRAM' (8#1) [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/DPRAM.v:4]
+WARNING: [Synth 8-689] width (8) of port connection 'ADDRA' does not match port width (2) of module 'DPRAM' [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/modbus_rtu_slave_top.v:208]
+WARNING: [Synth 8-689] width (8) of port connection 'ADDRB' does not match port width (2) of module 'DPRAM' [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/modbus_rtu_slave_top.v:209]
+WARNING: [Synth 8-7023] instance 'DPRAM_inst0' of module 'DPRAM' has 13 connections declared, but only 12 given [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/modbus_rtu_slave_top.v:200]
+INFO: [Synth 8-6157] synthesizing module 'modbus_crc_16' [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/modbus_crc_16.v:10]
+INFO: [Synth 8-6157] synthesizing module 'crc_16' [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/crc_16.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'crc_16' (9#1) [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/crc_16.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'modbus_crc_16' (10#1) [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/modbus_crc_16.v:10]
+INFO: [Synth 8-6157] synthesizing module 'tx_response' [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/tx_response.v:4]
 	Parameter CLK_FREQ bound to: 50000000 - type: integer 
 	Parameter BAUD_RATE bound to: 115200 - type: integer 
 	Parameter BPS_PARAM bound to: 434 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'uart_byte_tx' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/uart_byte_tx.v:4]
+INFO: [Synth 8-6157] synthesizing module 'uart_byte_tx' [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/uart_byte_tx.v:4]
 	Parameter CLK_FREQ bound to: 50000000 - type: integer 
 	Parameter BAUD_RATE bound to: 115200 - type: integer 
 	Parameter START_BIT bound to: 1'b0 
 	Parameter STOP_BIT bound to: 1'b1 
 	Parameter BPS_PARAM bound to: 434 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'uart_byte_tx' (11#1) [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/uart_byte_tx.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'tx_response' (12#1) [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/tx_response.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'modbus_rtu_slave_top' (13#1) [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/modbus_rtu_slave_top.v:4]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/top.v:89]
-INFO: [Synth 8-6157] synthesizing module 'ila_0' [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/synth_1/.Xil/Vivado-9664-TX/realtime/ila_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_0' (14#1) [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/synth_1/.Xil/Vivado-9664-TX/realtime/ila_0_stub.v:6]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_inst'. This will prevent further optimization [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/top.v:89]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'modbus_rtu_slave_top_inst0'. This will prevent further optimization [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/top.v:67]
-INFO: [Synth 8-6155] done synthesizing module 'top' (15#1) [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/top.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'uart_byte_tx' (11#1) [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/uart_byte_tx.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'tx_response' (12#1) [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/tx_response.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'modbus_rtu_slave_top' (13#1) [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/modbus_rtu_slave_top.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'top' (14#1) [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/top.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1280.324 ; gain = 117.902
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1254.020 ; gain = 92.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1298.250 ; gain = 135.828
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1254.020 ; gain = 92.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1298.250 ; gain = 135.828
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1254.020 ; gain = 92.469
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1298.250 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.071 . Memory (MB): peak = 1254.020 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'ila_inst'
-Finished Parsing XDC File [c:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'ila_inst'
-Parsing XDC File [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.srcs/constrs_1/imports/xdc/top.xdc]
-Finished Parsing XDC File [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.srcs/constrs_1/imports/xdc/top.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.srcs/constrs_1/imports/xdc/top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Parsing XDC File [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.srcs/constrs_1/imports/xdc/top.xdc]
+Finished Parsing XDC File [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.srcs/constrs_1/imports/xdc/top.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.srcs/constrs_1/imports/xdc/top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1417.980 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1371.512 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1417.980 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1371.512 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1417.980 ; gain = 255.559
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1371.512 ; gain = 209.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tfgg484-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1417.980 ; gain = 255.559
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1371.512 ; gain = 209.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for ila_inst. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1417.980 ; gain = 255.559
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1371.512 ; gain = 209.961
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_cnt_reg' in module 'frame_rx'
-INFO: [Synth 8-802] inferred FSM for state register 'i_reg' in module 'modbus_crc'
 INFO: [Synth 8-802] inferred FSM for state register 'op_state_reg' in module 'func_hander'
-INFO: [Synth 8-802] inferred FSM for state register 'i_reg' in module 'modbus_crc__parameterized0'
-INFO: [Synth 8-802] inferred FSM for state register 'op_state_reg' in module 'tx_handler'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                 iSTATE9 |                      00000000001 |                          0000000
-                 iSTATE8 |                      00000000010 |                          0000001
-                 iSTATE6 |                      00000000100 |                          0000010
-                 iSTATE4 |                      00000001000 |                          0000011
-                 iSTATE5 |                      00000010000 |                          0000100
-                 iSTATE3 |                      00000100000 |                          0000101
-                 iSTATE1 |                      00001000000 |                          0000110
-                  iSTATE |                      00010000000 |                          0000111
-                 iSTATE2 |                      00100000000 |                          0001000
-                 iSTATE0 |                      01000000000 |                          0001001
-                 iSTATE7 |                      10000000000 |                          0001010
+                iSTATE10 |                     000000000001 |                          0000000
+                 iSTATE9 |                     000000000010 |                          0000001
+                 iSTATE6 |                     000000000100 |                          0000010
+                 iSTATE4 |                     000000001000 |                          0000011
+                 iSTATE5 |                     000000010000 |                          0000100
+                 iSTATE3 |                     000000100000 |                          0000101
+                 iSTATE2 |                     000001000000 |                          0000110
+                 iSTATE0 |                     000010000000 |                          0000111
+                 iSTATE1 |                     000100000000 |                          0001000
+                  iSTATE |                     001000000000 |                          0001001
+                 iSTATE8 |                     010000000000 |                          0001010
+                 iSTATE7 |                     100000000000 |                          0001011
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_cnt_reg' using encoding 'one-hot' in module 'frame_rx'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                 iSTATE0 |                              000 |                         00000000
-                 iSTATE1 |                              001 |                         00000001
-                 iSTATE3 |                              010 |                         00000010
-                 iSTATE4 |                              011 |                         00000011
-                 iSTATE5 |                              100 |                         00000100
-                 iSTATE2 |                              101 |                         00000101
-                  iSTATE |                              110 |                         00000110
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'i_reg' using encoding 'sequential' in module 'modbus_crc'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -184,114 +162,80 @@ INFO: [Synth 8-3354] encoded FSM with state register 'i_reg' using encoding 'seq
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'op_state_reg' using encoding 'one-hot' in module 'func_hander'
 INFO: [Synth 8-3971] The signal "DPRAM:/RAM_reg" was recognized as a true dual port RAM template.
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                 iSTATE0 |                              000 |                         00000000
-                 iSTATE1 |                              001 |                         00000001
-                 iSTATE3 |                              010 |                         00000010
-                 iSTATE4 |                              011 |                         00000011
-                 iSTATE5 |                              100 |                         00000100
-                 iSTATE2 |                              101 |                         00000101
-                  iSTATE |                              110 |                         00000110
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'i_reg' using encoding 'sequential' in module 'modbus_crc__parameterized0'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                 iSTATE0 |                              000 |                         00000000
-                 iSTATE1 |                              001 |                         00000001
-                 iSTATE4 |                              010 |                         00000010
-                 iSTATE3 |                              011 |                         00000011
-                 iSTATE2 |                              100 |                         00000100
-                  iSTATE |                              101 |                         00000101
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'op_state_reg' using encoding 'sequential' in module 'tx_handler'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1417.980 ; gain = 255.559
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1371.512 ; gain = 209.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input   20 Bit       Adders := 3     
 	   3 Input   17 Bit       Adders := 1     
-	   2 Input   16 Bit       Adders := 8     
-	   3 Input   12 Bit       Adders := 1     
-	   2 Input    8 Bit       Adders := 3     
+	   2 Input   16 Bit       Adders := 5     
+	   2 Input   10 Bit       Adders := 3     
+	   2 Input    8 Bit       Adders := 2     
 	   3 Input    8 Bit       Adders := 1     
-	   2 Input    6 Bit       Adders := 2     
-	   2 Input    5 Bit       Adders := 2     
-	   2 Input    4 Bit       Adders := 5     
-	   2 Input    3 Bit       Adders := 11    
+	   3 Input    7 Bit       Adders := 2     
+	   2 Input    7 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 3     
+	   2 Input    3 Bit       Adders := 9     
 +---XORs : 
-	   2 Input     16 Bit         XORs := 3     
-	   2 Input      8 Bit         XORs := 3     
+	   2 Input      1 Bit         XORs := 12    
+	   5 Input      1 Bit         XORs := 1     
+	   8 Input      1 Bit         XORs := 1     
+	   4 Input      1 Bit         XORs := 1     
+	   3 Input      1 Bit         XORs := 3     
+	   6 Input      1 Bit         XORs := 1     
+	   7 Input      1 Bit         XORs := 1     
 +---Registers : 
+	              104 Bit    Registers := 1     
+	               88 Bit    Registers := 1     
 	               64 Bit    Registers := 1     
-	               48 Bit    Registers := 1     
 	               40 Bit    Registers := 1     
-	               24 Bit    Registers := 1     
-	               16 Bit    Registers := 25    
-	                8 Bit    Registers := 22    
-	                6 Bit    Registers := 2     
-	                5 Bit    Registers := 2     
-	                4 Bit    Registers := 6     
+	               20 Bit    Registers := 3     
+	               16 Bit    Registers := 18    
+	                8 Bit    Registers := 20    
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 4     
 	                3 Bit    Registers := 9     
-	                1 Bit    Registers := 43    
+	                1 Bit    Registers := 45    
 +---RAMs : 
 	               64 Bit	(4 X 16 bit)          RAMs := 1     
 +---Muxes : 
-	   6 Input   64 Bit        Muxes := 1     
-	   7 Input   48 Bit        Muxes := 1     
-	   6 Input   40 Bit        Muxes := 1     
-	   7 Input   24 Bit        Muxes := 1     
-	   2 Input   16 Bit        Muxes := 23    
-	  11 Input   16 Bit        Muxes := 6     
-	   7 Input   16 Bit        Muxes := 4     
+	   2 Input   20 Bit        Muxes := 6     
+	   2 Input   16 Bit        Muxes := 14    
+	  12 Input   16 Bit        Muxes := 6     
 	   4 Input   16 Bit        Muxes := 1     
 	   5 Input   16 Bit        Muxes := 1     
 	   6 Input   16 Bit        Muxes := 3     
-	  14 Input   16 Bit        Muxes := 3     
-	   8 Input   16 Bit        Muxes := 2     
-	  11 Input   11 Bit        Muxes := 1     
-	   2 Input   11 Bit        Muxes := 17    
+	  12 Input   12 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 19    
 	   2 Input    8 Bit        Muxes := 15    
-	  11 Input    8 Bit        Muxes := 1     
-	   7 Input    8 Bit        Muxes := 2     
+	  12 Input    8 Bit        Muxes := 1     
 	   3 Input    8 Bit        Muxes := 1     
-	   6 Input    8 Bit        Muxes := 8     
-	  14 Input    8 Bit        Muxes := 5     
-	   8 Input    8 Bit        Muxes := 2     
+	   6 Input    8 Bit        Muxes := 6     
 	  17 Input    8 Bit        Muxes := 1     
-	   2 Input    6 Bit        Muxes := 5     
 	   6 Input    6 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 1     
 	   4 Input    6 Bit        Muxes := 1     
 	   3 Input    6 Bit        Muxes := 2     
-	   2 Input    5 Bit        Muxes := 2     
-	   7 Input    4 Bit        Muxes := 2     
-	   2 Input    4 Bit        Muxes := 10    
-	  14 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 8     
 	   8 Input    4 Bit        Muxes := 1     
-	   7 Input    3 Bit        Muxes := 2     
-	   2 Input    3 Bit        Muxes := 12    
-	   6 Input    3 Bit        Muxes := 1     
-	   3 Input    3 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 8     
 	   3 Input    2 Bit        Muxes := 2     
 	   5 Input    2 Bit        Muxes := 1     
-	   4 Input    2 Bit        Muxes := 2     
-	  12 Input    1 Bit        Muxes := 9     
-	   2 Input    1 Bit        Muxes := 98    
-	  11 Input    1 Bit        Muxes := 3     
-	   7 Input    1 Bit        Muxes := 14    
-	   3 Input    1 Bit        Muxes := 3     
-	   4 Input    1 Bit        Muxes := 9     
-	   5 Input    1 Bit        Muxes := 3     
-	   6 Input    1 Bit        Muxes := 30    
-	   8 Input    1 Bit        Muxes := 8     
-	  14 Input    1 Bit        Muxes := 13    
-	  21 Input    1 Bit        Muxes := 2     
+	   4 Input    2 Bit        Muxes := 1     
+	  12 Input    1 Bit        Muxes := 14    
+	   2 Input    1 Bit        Muxes := 110   
+	   3 Input    1 Bit        Muxes := 4     
+	   4 Input    1 Bit        Muxes := 10    
+	   5 Input    1 Bit        Muxes := 2     
+	   6 Input    1 Bit        Muxes := 19    
+	   8 Input    1 Bit        Muxes := 10    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -308,18 +252,18 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1417.980 ; gain = 255.559
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1371.512 ; gain = 209.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 Distributed RAM: Preliminary Mapping	Report (see note below)
-+---------------------------+---------------------+-----------+----------------------+-------------+
-|Module Name                | RTL Object          | Inference | Size (Depth x Width) | Primitives  | 
-+---------------------------+---------------------+-----------+----------------------+-------------+
-|modbus_rtu_slave_top_inst0 | DPRAM_inst0/RAM_reg | Implied   | 4 x 16               | RAM32M x 3	 | 
-+---------------------------+---------------------+-----------+----------------------+-------------+
++------------+------------------------------------------------+-----------+----------------------+-------------+
+|Module Name | RTL Object                                     | Inference | Size (Depth x Width) | Primitives  | 
++------------+------------------------------------------------+-----------+----------------------+-------------+
+|top         | modbus_rtu_slave_top_inst0/DPRAM_inst0/RAM_reg | Implied   | 4 x 16               | RAM32M x 3	 | 
++------------+------------------------------------------------+-----------+----------------------+-------------+
 
 Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 ---------------------------------------------------------------------------------
@@ -329,24 +273,24 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1417.980 ; gain = 255.559
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1371.512 ; gain = 209.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1437.309 ; gain = 274.887
+Finished Timing Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 1393.000 ; gain = 231.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 Distributed RAM: Final Mapping	Report
-+---------------------------+---------------------+-----------+----------------------+-------------+
-|Module Name                | RTL Object          | Inference | Size (Depth x Width) | Primitives  | 
-+---------------------------+---------------------+-----------+----------------------+-------------+
-|modbus_rtu_slave_top_inst0 | DPRAM_inst0/RAM_reg | Implied   | 4 x 16               | RAM32M x 3	 | 
-+---------------------------+---------------------+-----------+----------------------+-------------+
++------------+------------------------------------------------+-----------+----------------------+-------------+
+|Module Name | RTL Object                                     | Inference | Size (Depth x Width) | Primitives  | 
++------------+------------------------------------------------+-----------+----------------------+-------------+
+|top         | modbus_rtu_slave_top_inst0/DPRAM_inst0/RAM_reg | Implied   | 4 x 16               | RAM32M x 3	 | 
++------------+------------------------------------------------+-----------+----------------------+-------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -355,7 +299,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1438.363 ; gain = 275.941
+Finished Technology Mapping : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1401.820 ; gain = 240.270
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -373,93 +317,89 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1438.363 ; gain = 275.941
+Finished IO Insertion : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1410.242 ; gain = 248.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1438.363 ; gain = 275.941
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1410.242 ; gain = 248.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1438.363 ; gain = 275.941
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1410.242 ; gain = 248.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1438.363 ; gain = 275.941
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1410.242 ; gain = 248.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1438.363 ; gain = 275.941
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 1410.242 ; gain = 248.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1438.363 ; gain = 275.941
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 1410.242 ; gain = 248.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+------+--------------+----------+
-|      |BlackBox name |Instances |
-+------+--------------+----------+
-|1     |ila_0         |         1|
-+------+--------------+----------+
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
 
 Report Cell Usage: 
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |ila    |     1|
-|2     |BUFG   |     1|
-|3     |CARRY4 |    48|
-|4     |LUT1   |     5|
-|5     |LUT2   |   287|
-|6     |LUT3   |   228|
-|7     |LUT4   |   123|
-|8     |LUT5   |   160|
-|9     |LUT6   |   288|
-|10    |MUXF7  |     2|
-|11    |RAM32M |     3|
-|12    |FDCE   |   761|
-|13    |FDPE   |     7|
-|14    |FDRE   |    38|
-|15    |IBUF   |     6|
-|16    |OBUF   |     2|
+|1     |BUFG   |     1|
+|2     |CARRY4 |    56|
+|3     |LUT1   |     5|
+|4     |LUT2   |   134|
+|5     |LUT3   |   186|
+|6     |LUT4   |   134|
+|7     |LUT5   |   117|
+|8     |LUT6   |   418|
+|9     |MUXF7  |    16|
+|10    |RAM32M |     3|
+|11    |FDCE   |   756|
+|12    |FDPE   |    22|
+|13    |FDRE   |    38|
+|14    |IBUF   |     6|
+|15    |OBUF   |     2|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1438.363 ; gain = 275.941
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 1410.242 ; gain = 248.691
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 1438.363 ; gain = 156.211
-Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1438.363 ; gain = 275.941
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:00:48 . Memory (MB): peak = 1410.242 ; gain = 131.199
+Synthesis Optimization Complete : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 1410.242 ; gain = 248.691
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1450.258 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 53 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 1422.301 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 75 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1450.258 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1422.301 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 3 instances were transformed.
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 3 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-63 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+51 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1450.258 ; gain = 287.836
-INFO: [Common 17-600] The following parameters have non-default value.
-tcl.collectionResultDisplayLimit
-INFO: [Common 17-1381] The checkpoint 'C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/synth_1/top.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:58 ; elapsed = 00:01:01 . Memory (MB): peak = 1422.301 ; gain = 260.750
+INFO: [Common 17-1381] The checkpoint 'C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Apr 25 15:34:01 2022...
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 28 17:23:06 2022...

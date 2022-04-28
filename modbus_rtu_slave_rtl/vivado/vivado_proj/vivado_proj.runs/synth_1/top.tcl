@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/synth_1/top.tcl"
+  variable script "C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/synth_1/top.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,49 +70,38 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param tcl.collectionResultDisplayLimit 0
-set_param chipscope.maxJobs 4
-set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tfgg484-2
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.cache/wt [current_project]
-set_property parent.project_path C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.xpr [current_project]
-set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+set_property webtalk.parent_dir C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.cache/wt [current_project]
+set_property parent.project_path C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_repo_paths c:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/ip_repo [current_project]
+set_property ip_repo_paths c:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/ip_repo [current_project]
 update_ip_catalog
-set_property ip_output_repo c:/home/andreas/workdir/figkey/modbus_rtu_slave_rtl/vivado/ip_cache [current_project]
+set_property ip_output_repo c:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/ip_cache [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/DPRAM.v
-  C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/ct_15t_gen.v
-  C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/ct_35t_gen.v
-  C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/exceptions.v
-  C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/frame_rx.v
-  C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/func_handler.v
-  C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/modbus_crc.v
-  C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/modbus_rtu_slave_top.v
-  C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/reset_module.v
-  C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/tx_handler.v
-  C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/tx_response.v
-  C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/uart_byte_rx.v
-  C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/uart_byte_tx.v
-  C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/hdl/top.v
+  C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/DPRAM.v
+  C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/crc_16.v
+  C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/ct_15t_gen.v
+  C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/ct_35t_gen.v
+  C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/exceptions.v
+  C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/frame_rx.v
+  C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/func_handler.v
+  C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/modbus_crc_16.v
+  C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/modbus_rtu_slave_top.v
+  C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/reset_module.v
+  C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/tx_response.v
+  C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/uart_byte_rx.v
+  C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/uart_byte_tx.v
+  C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/hdl/top.v
 }
-read_ip -quiet c:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.srcs/sources_1/ip/ila_0/ila_0.xci
-set_property used_in_synthesis false [get_files -all c:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.gen/sources_1/ip/ila_0/ila_0_ooc.xdc]
-
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -122,8 +111,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.srcs/constrs_1/imports/xdc/top.xdc
-set_property used_in_implementation false [get_files C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.srcs/constrs_1/imports/xdc/top.xdc]
+read_xdc C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.srcs/constrs_1/imports/xdc/top.xdc
+set_property used_in_implementation false [get_files C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.srcs/constrs_1/imports/xdc/top.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

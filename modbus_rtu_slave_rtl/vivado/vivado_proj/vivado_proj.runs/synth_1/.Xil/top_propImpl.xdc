@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.srcs/constrs_1/imports/xdc/top.xdc rfile:../../../vivado_proj.srcs/constrs_1/imports/xdc/top.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/txzing/Desktop/Git_repository/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.srcs/constrs_1/imports/xdc/top.xdc rfile:../../../vivado_proj.srcs/constrs_1/imports/xdc/top.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN Y18 [get_ports sys_clk]
 set_property src_info {type:XDC file:1 line:11 export:INPUT save:INPUT read:READ} [current_design]

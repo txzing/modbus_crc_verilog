@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Mon Apr 25 15:35:24 2022
+| Date             : Thu Apr 28 17:24:36 2022
 | Host             : TX running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.080        |
+| Total On-Chip Power (W)  | 0.074        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.008        |
+| Dynamic (W)              | 0.002        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 2.8          |
 | Max Ambient (C)          | 84.8         |
@@ -52,20 +52,18 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.005 |        4 |       --- |             --- |
-| Slice Logic              |    <0.001 |     5406 |       --- |             --- |
-|   LUT as Logic           |    <0.001 |     1775 |     20800 |            8.53 |
-|   Register               |    <0.001 |     2647 |     41600 |            6.36 |
-|   CARRY4                 |    <0.001 |       75 |      8150 |            0.92 |
-|   LUT as Shift Register  |    <0.001 |       73 |      9600 |            0.76 |
-|   LUT as Distributed RAM |    <0.001 |       36 |      9600 |            0.38 |
-|   F7/F8 Muxes            |    <0.001 |       12 |     32600 |            0.04 |
-|   Others                 |     0.000 |      233 |       --- |             --- |
-| Signals                  |    <0.001 |     3895 |       --- |             --- |
-| Block RAM                |    <0.001 |      0.5 |        50 |            1.00 |
+| Clocks                   |     0.001 |        3 |       --- |             --- |
+| Slice Logic              |    <0.001 |     1929 |       --- |             --- |
+|   LUT as Logic           |    <0.001 |      811 |     20800 |            3.90 |
+|   CARRY4                 |    <0.001 |       56 |      8150 |            0.69 |
+|   Register               |    <0.001 |      816 |     41600 |            1.96 |
+|   F7/F8 Muxes            |    <0.001 |       16 |     32600 |            0.05 |
+|   Others                 |     0.000 |       23 |       --- |             --- |
+|   LUT as Distributed RAM |     0.000 |       12 |      9600 |            0.13 |
+| Signals                  |    <0.001 |     1454 |       --- |             --- |
 | I/O                      |    <0.001 |        8 |       250 |            3.20 |
 | Static Power             |     0.072 |          |           |                 |
-| Total                    |     0.080 |          |           |                 |
+| Total                    |     0.074 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.017 |       0.007 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.011 |       0.002 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -128,12 +126,11 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-----------------+
-| Clock                                                                                      | Domain                                                               | Constraint (ns) |
-+--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-----------------+
-| dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/tck_bs |            33.0 |
-| sys_clk                                                                                    | sys_clk                                                              |            20.0 |
-+--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-----------------+
++---------+---------+-----------------+
+| Clock   | Domain  | Constraint (ns) |
++---------+---------+-----------------+
+| sys_clk | sys_clk |            20.0 |
++---------+---------+-----------------+
 
 
 3. Detailed Reports
@@ -145,13 +142,7 @@ Table of Contents
 +------------------------------+-----------+
 | Name                         | Power (W) |
 +------------------------------+-----------+
-| top                          |     0.008 |
-|   dbg_hub                    |     0.002 |
-|     inst                     |     0.002 |
-|       BSCANID.u_xsdbm_id     |     0.002 |
-|   ila_inst                   |     0.003 |
-|     inst                     |     0.003 |
-|       ila_core_inst          |     0.003 |
+| top                          |     0.002 |
 |   modbus_rtu_slave_top_inst0 |     0.002 |
 +------------------------------+-----------+
 

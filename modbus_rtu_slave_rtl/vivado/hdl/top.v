@@ -22,10 +22,10 @@
 
 module top
 (
-    input                   sys_clk,
+    input                   sys_clk  ,
     input  [3:0]            dev_addr ,
-    input                   rs485_rx,
-    output  wire            rs485_tx,
+    input                   rs485_rx ,
+    output  wire            rs485_tx ,
     output  wire            rs485_oe
 );
 
@@ -66,8 +66,8 @@ modbus_rtu_slave_top #
     .BAUD_RATE      ('d115200       )
 )modbus_rtu_slave_top_inst0
 (
-    .clk_in                 (sys_clk            ),			// system clock
-    .rst_n_in               (reset_n            ),		// system reset, active low
+    .clk                    (sys_clk            ),			// system clock
+    .rst_n                  (reset_n            ),		// system reset, active low
     
     .dev_addr               ({4'hf, dev_addr}   ),
     .read_04_01             (16'h5347           ),
@@ -86,10 +86,10 @@ modbus_rtu_slave_top #
 );
 
 
-ila_0 ila_inst (
-	.clk(sys_clk), // input wire clk
-	.probe0(dev_addr),
-	.probe1(modbus_rtu_slave_top_inst0.rx_data)
-);
+// ila_0 ila_inst (
+// 	.clk(sys_clk), // input wire clk
+// 	.probe0(dev_addr),
+// 	.probe1(modbus_rtu_slave_top_inst0.rx_data)
+// );
 
 endmodule

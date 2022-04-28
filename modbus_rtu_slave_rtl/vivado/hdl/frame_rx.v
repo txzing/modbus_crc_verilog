@@ -3,31 +3,31 @@
 
 module frame_rx 
 (
-    input               clk_in,			// system clock
-    input               rst_n_in,		// system reset, active low
+    input               clk             ,// system clock
+    input               rst_n           ,// system reset, active low
 
-    input   [7:0]       dev_addr ,
-    input               rx_drop_frame,  // 1.5T interval
-    input               rx_new_frame,   // 3.5T interval
-    input               rx_done,        // 
-    input   [7:0]       rx_data,        //
+    input   [7:0]       dev_addr        ,
+    input               rx_drop_frame   ,// 1.5T interval
+    input               rx_new_frame    ,// 3.5T interval
+    input               rx_done         ,// 
+    input   [7:0]       rx_data         ,//
 
-    input	        	rx_crc_error,//校验出错
-    input	        	rx_crc_done	,//校验无误
+    input	        	rx_crc_error    ,//校验出错
+    input	        	rx_crc_done	    ,//校验无误
 
-    output  reg         rx_crc_vld,
-    output  reg         rx_message_done,
-    output  reg [7:0]   func_code,
-    output  reg [15:0]  addr,
-    output  reg [15:0]  data,
+    output  reg         rx_crc_vld      ,
+    output  reg         rx_message_done ,
+    output  reg [7:0]   func_code       ,
+    output  reg [15:0]  addr            ,
+    output  reg [15:0]  data            ,
     output  reg [15:0]  crc_rx_code
 );
 
 
-reg rx_message_sig;
-always@(posedge clk_in or negedge rst_n_in)
+reg      rx_message_sig;
+always@(posedge clk or negedge rst_n)
 begin
-    if(!rst_n_in)
+    if(!rst_n)
     begin
         rx_message_sig <= `UD 1'b1;
     end
@@ -47,9 +47,9 @@ end
 
 
 reg [6:0] state_cnt;
-always@(posedge clk_in or negedge rst_n_in)
+always@(posedge clk or negedge rst_n)
 begin
-    if(!rst_n_in)
+    if(!rst_n)
     begin
         state_cnt <= `UD 7'd0;
         rx_message_done <= `UD 1'b0;

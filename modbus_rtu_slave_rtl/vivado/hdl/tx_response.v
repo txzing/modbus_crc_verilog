@@ -7,19 +7,20 @@ module tx_response #
     parameter           BAUD_RATE  = 'd9600   //
 )
 (
-    input               clk,			// system clock
-    input               rst_n,		// system reset, active low
+    input               clk                ,// system clock
+    input               rst_n              ,// system reset, active low
 
-    input               tx_06_rp_start,	
-    input               tx_exp_rp_start,	
-    input               tx_03_04_rp_start,	
+    input               tx_06_rp_start     ,	
+    input               tx_exp_rp_start    ,	
+    input               tx_03_04_rp_start  ,
 
-    input   [7:0]       tx_quantity,
-    input   [39:0]      exception_seq,
-    input   [63:0]      code06_response,
-    input   [103:0]     code03_04_response,
-    output  reg         response_done,
-    output  wire        rs485_tx,
+    input   [7:0]       tx_quantity        ,
+    input   [39:0]      exception_seq      ,
+    input   [63:0]      code06_response    ,
+    input   [103:0]     code03_04_response ,
+
+    output  reg         response_done      ,
+    output  wire        rs485_tx           ,
     output  reg         rs485_tx_en
 );
 
@@ -27,18 +28,22 @@ localparam BPS_PARAM = (CLK_FREQ/BAUD_RATE);
 
 reg         tx_start_pos;
 
-
-reg         [5:0] bps_cnt;
 reg         cnt_en;
 reg         response_done_r;
 
-reg [7:0]   rs485_tx_data;
+reg  [7:0]  rs485_tx_data;
 reg         rs485_tx_start;
 wire        tx_done;
 reg  [3:0]  byte_cnt;
 
-reg [3:0]   op_state;
-reg FF;
+reg  [3:0]  op_state;
+reg         FF;
+
+reg         cnt_en_flag;//计数器
+reg [19:0]  bps_cnt    ;//每一帧数据发送完毕后延时一段时间
+wire        add_bps_cnt;
+wire        end_bps_cnt;
+
 
 always@(posedge clk or negedge rst_n)
 begin
@@ -98,7 +103,7 @@ begin
             else
             begin
                 tx_start_pos <= `UD 1'b0;
-                if(bps_cnt>=6'd10)
+                if(end_bps_cnt)
                 begin
                     rs485_tx_data <= `UD exception_seq[39:32];
                     FF <= `UD 1'b1;
@@ -161,7 +166,7 @@ begin
             else
             begin
                 tx_start_pos <= `UD 1'b0;
-                if(bps_cnt>=6'd10)
+                if(end_bps_cnt)
                 begin
                     rs485_tx_data <= `UD code06_response[63:56];
                     FF <= `UD 1'b1;
@@ -224,7 +229,7 @@ begin
             else
             begin
                 tx_start_pos <= `UD 1'b0;
-                if(bps_cnt>=6'd10)
+                if(end_bps_cnt)
                 begin
                     rs485_tx_data <= `UD code03_04_response[(((tx_quantity<<1)+5)<<3)-1 -:8];
                     FF <= `UD 1'b1;
@@ -284,7 +289,7 @@ begin
                 response_done_r <= `UD 1'b0;
                 FF <= `UD 1'b0;
             end
-            else if(bps_cnt>=6'd10)
+            else if(end_bps_cnt)
             begin
                 op_state <= `UD 8'd0;
                 FF <= `UD 1'b1;
@@ -316,94 +321,47 @@ begin
         begin
             cnt_en <= `UD 1'b1;
         end
-        else if(bps_cnt>=6'd10)
+        else if(end_bps_cnt)
         begin
             cnt_en <= `UD 1'b0;
         end
     end
 end
 
-reg [15:0]  baud_rate_cnt;
-always@(posedge clk or negedge rst_n)
-begin
-    if(!rst_n)
-    begin
-        baud_rate_cnt <= `UD 16'd0;
-    end
-    else
-    begin
-        if(cnt_en)
-        begin
-            if(baud_rate_cnt >= BPS_PARAM - 1)
-            begin
-                baud_rate_cnt <= `UD 16'd0;
-            end
-            else
-            begin
-                baud_rate_cnt <= `UD baud_rate_cnt + 1'b1;
-            end
-        end
-        else
-        begin
-            baud_rate_cnt <= `UD 16'd0;
-        end
-    end
+always @(posedge clk or negedge rst_n)
+begin 
+    if(!rst_n)begin
+        cnt_en_flag <= `UD 1'b0;
+    end 
+    else if(tx_start_pos||response_done_r)
+    begin 
+        cnt_en_flag <= `UD 1'b1;       
+    end 
+    else if(end_bps_cnt)
+    begin 
+        cnt_en_flag <= `UD 1'b0;       
+    end 
 end
 
-// generate bps_clk signal
-reg bps_clk;
-always @ (posedge clk or negedge rst_n)
-begin
-	if(!rst_n) 
-    begin
-		bps_clk <= `UD 1'b0;
+always @(posedge clk or negedge rst_n)begin 
+   if(!rst_n)begin
+        bps_cnt <= `UD 0;
+    end 
+    else if(add_bps_cnt)begin 
+            if(end_bps_cnt)begin 
+                bps_cnt <= `UD 0;
+            end
+            else begin 
+                bps_cnt <= `UD bps_cnt + 1;
+            end 
     end
-	else
-    begin
-        if(baud_rate_cnt >= BPS_PARAM - 1 )
-        begin
-		    bps_clk <= `UD 1'b1;	
-        end
-	    else 
-        begin
-		    bps_clk <= `UD 1'b0;
-        end
+   else  begin
+       bps_cnt <= `UD 0;
     end
-end
+end 
 
-//bps counter
-always@(posedge clk or negedge rst_n)
-begin
-    if(!rst_n)	
-    begin
-	    bps_cnt <= `UD 6'd0;
-    end
-    else
-    begin
-        if(bps_cnt>=6'd15)
-        begin
-	        bps_cnt <= `UD 6'd0;
-        end
-        else
-        begin
-            if(cnt_en)
-            begin
-                if(bps_clk)
-                begin
-	                bps_cnt <= `UD bps_cnt + 1'b1;
-                end
-                else
-                begin
-	                bps_cnt <= `UD bps_cnt;
-                end
-            end
-            else
-            begin
-                bps_cnt <= `UD 6'd0;
-            end
-        end
-    end
-end
+assign add_bps_cnt = cnt_en_flag;
+assign end_bps_cnt = bps_cnt && bps_cnt == 10*(BPS_PARAM-1);
 
 uart_byte_tx #
 (
@@ -420,17 +378,4 @@ uart_byte_tx #
     .rs232_tx       (rs485_tx		)	// uart transfer pin
 );
 
-/*
-always@(posedge clk or negedge rst_n)
-begin
-    if( !rst_n )
-    begin
-        
-    end
-    else
-    begin
-        
-    end
-end
-*/
 endmodule

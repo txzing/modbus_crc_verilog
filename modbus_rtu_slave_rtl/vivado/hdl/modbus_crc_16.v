@@ -118,11 +118,11 @@ always @(posedge clk or negedge rst_n)begin
     begin 
         crc_done <= `UD 1'b1;
     end
-    else if(tx_crc_flag && byte_cnt == ((tx_quantity<<1)+3) && exception_r == 8'h00)//03,04,normal read response crc check down
+    else if(tx_crc_flag && byte_cnt == ((tx_quantity<<1)+3) && !exception_r)//03,04,normal read response crc check down
     begin 
         crc_done <= `UD 1'b1;
     end  
-    else if(tx_crc_flag && byte_cnt == 3 && exception_r != 8'h00)//exception response crc check down
+    else if(tx_crc_flag && byte_cnt == 3 && exception_r)//exception response crc check down
     begin 
         crc_done <= `UD 1'b1;
     end 
@@ -145,7 +145,6 @@ always @(posedge clk or negedge rst_n)begin
     end 
     else if(rx_crc_vld_r && !rx_crc_flag)begin//开始一帧数据的校验
         rx_crc_flag <= `UD 1'b1;
-        crc_clr <= `UD 1'b1;
         check_byte <= `UD {dev_addr_r,func_code_r,addr_r,data_r};//6字节数据
     end 
     else if(crc_done && rx_crc_flag)//一帧数据校验完毕
@@ -209,17 +208,17 @@ always @(posedge clk or negedge rst_n)begin
         exception_seq <= `UD 40'd0;
         code03_04_response <= `UD 103'd0;  
     end 
-    else if(handler_done_r && exception_r==8'h00 && func_code_r==8'h06)
+    else if(handler_done_r && !exception_r && func_code_r==8'h06)
     begin//06，normal respond
         code06_response <= `UD {dev_addr_r, func_code_r, addr_r, data_r, crc_rx_code_r[7:0], crc_rx_code_r[15:8]}; 
         tx_06_rp_start <= `UD 1'd1;   
     end 
-    else if(crc_done && tx_crc_flag && exception_r == 8'h00 && func_code_r !=8'h06)
+    else if(crc_done && tx_crc_flag && !exception_r && func_code_r !=8'h06)
     begin//03,04,normal read response
         tx_03_04_rp_start <= `UD 1'd1; 
         code03_04_response <= `UD {check_byte, crc_out[7:0], crc_out[15:8]};  
     end 
-    else if(crc_done && tx_crc_flag && exception_r != 8'h00)//异常代码校验完毕
+    else if(crc_done && tx_crc_flag && exception_r)//异常代码校验完毕
     begin//exception response
         exception_seq <= `UD {dev_addr_r, func_code_r|8'h80, exception_r, crc_out[7:0], crc_out[15:8]};
         tx_exp_rp_start <= `UD 1'd1;   
@@ -246,14 +245,14 @@ always @(posedge clk or negedge rst_n)begin
         byte_cnt <= `UD byte_cnt + 1;
         data_in <= `UD check_byte[(47 - byte_cnt*8) -:8];        
     end
-    else if((byte_cnt <= (tx_quantity<<1)+2) && tx_crc_flag && exception_r == 8'h00 && !crc_done)//03_04
+    else if((byte_cnt <= (tx_quantity<<1)+2) && tx_crc_flag && !exception_r && !crc_done)//03_04
     begin 
         crc_en <= `UD 1'd1;//开始进行crc校验 
         crc_clr <= `UD 1'b0; 
         byte_cnt <= `UD byte_cnt + 1;
         data_in <= `UD check_byte[(((tx_quantity<<1)+3 - byte_cnt)*8)-1 -:8];
     end  
-    else if(byte_cnt <= 2 && tx_crc_flag && exception_r != 8'h00 && !crc_done)//exception response 
+    else if(byte_cnt <= 2 && tx_crc_flag && exception_r && !crc_done)//exception response 
     begin 
         crc_en <= `UD 1'd1;//开始进行crc校验 
         crc_clr <= `UD 1'b0; 
