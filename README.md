@@ -57,3 +57,7 @@ func_handler_tb.do
 done
 
 modbus_rtu_slave_top_tb.do
+
+# simulation
+经过仿真与上板测试，无误
+程序中代码任有部分可优化
