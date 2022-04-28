@@ -1,0 +1,106 @@
+{
+    "ltx_root": {
+        "version": 4,
+        "minor": 0,
+        "ltx_data": [
+            {
+                "name": "EDA_PROBESET",
+                "active": true,
+                "debug_cores": [
+                    {
+                        "type": "XSDB_V3",
+                        "name": "dbg_hub",
+                        "spec": "labtools_xsdbm_v3",
+                        "clk_input_freq_hz": "50000000"
+                    },
+                    {
+                        "type": "ILA_V3",
+                        "name": "ila_inst",
+                        "spec": "labtools_ila_v6",
+                        "ipName": "ila",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 0,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "B65D52E476D5562DB4292AFCA0F6D0A3",
+                        "pins": [
+                            {
+                                "name": "probe0",
+                                "id": 0,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 3,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "dev_addr_IBUF",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "dev_addr_IBUF[3]"
+                                            },
+                                            {
+                                                "name": "dev_addr_IBUF[2]"
+                                            },
+                                            {
+                                                "name": "dev_addr_IBUF[1]"
+                                            },
+                                            {
+                                                "name": "dev_addr_IBUF[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe1",
+                                "id": 1,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 7,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "rx_data",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "rx_data[7]"
+                                            },
+                                            {
+                                                "name": "rx_data[6]"
+                                            },
+                                            {
+                                                "name": "rx_data[5]"
+                                            },
+                                            {
+                                                "name": "rx_data[4]"
+                                            },
+                                            {
+                                                "name": "rx_data[3]"
+                                            },
+                                            {
+                                                "name": "rx_data[2]"
+                                            },
+                                            {
+                                                "name": "rx_data[1]"
+                                            },
+                                            {
+                                                "name": "rx_data[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

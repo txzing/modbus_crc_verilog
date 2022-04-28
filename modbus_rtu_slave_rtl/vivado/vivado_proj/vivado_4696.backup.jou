@@ -1,0 +1,45 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Apr 24 17:03:59 2022
+# Process ID: 4696
+# Current directory: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10576 C:\Users\txzing\Desktop\modbus_rtu_slave_rtl\vivado\vivado_proj\vivado_proj.xpr
+# Log file: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado.log
+# Journal file: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+copy_run -name synth_1_copy_1 [get_runs synth_1] 
+set_property part xc7a35tfgg484-2 [current_project]
+config_ip_cache -import_from_project -use_cache_location C:/home/andreas/workdir/figkey/modbus_rtu_slave_rtl/vivado/ip_cache
+update_ip_catalog
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+open_run impl_1
+ls
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+close_design

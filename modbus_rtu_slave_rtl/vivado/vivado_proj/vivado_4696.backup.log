@@ -1,0 +1,111 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Apr 24 17:03:59 2022
+# Process ID: 4696
+# Current directory: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10576 C:\Users\txzing\Desktop\modbus_rtu_slave_rtl\vivado\vivado_proj\vivado_proj.xpr
+# Log file: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado.log
+# Journal file: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.xpr
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1161.781 ; gain = 0.000
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Sun Apr 24 17:06:07 2022] Launched synth_1...
+Run output will be captured here: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/synth_1/runme.log
+[Sun Apr 24 17:06:07 2022] Launched impl_1...
+Run output will be captured here: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/impl_1/runme.log
+copy_run -name synth_1_copy_1 [get_runs synth_1] 
+synth_1_copy_1
+set_property part xc7a35tfgg484-2 [current_project]
+config_ip_cache -import_from_project -use_cache_location C:/home/andreas/workdir/figkey/modbus_rtu_slave_rtl/vivado/ip_cache
+update_ip_catalog
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+[Sun Apr 24 17:16:15 2022] Launched synth_1...
+Run output will be captured here: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 8
+[Sun Apr 24 17:17:27 2022] Launched impl_1...
+Run output will be captured here: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7a35tfgg484-2
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1433.754 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 64 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.121 . Memory (MB): peak = 2111.246 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.121 . Memory (MB): peak = 2111.246 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2111.246 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 3 instances
+
+open_run: Time (s): cpu = 00:00:19 ; elapsed = 00:00:16 . Memory (MB): peak = 2252.805 ; gain = 1091.023
+ls
+WARNING: [Common 17-259] Unknown Tcl command 'ls' sending command to the OS shell for execution. It is recommended to use 'exec' to send the command to the OS shell.
+vivado.jou
+vivado.log
+vivado_16528.backup.jou
+vivado_16528.backup.log
+vivado_pid4696.str
+vivado_proj.cache
+vivado_proj.hw
+vivado_proj.ip_user_files
+vivado_proj.runs
+vivado_proj.sim
+vivado_proj.srcs
+vivado_proj.xpr
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Sun Apr 24 17:42:02 2022] Launched synth_1...
+Run output will be captured here: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/synth_1/runme.log
+[Sun Apr 24 17:42:02 2022] Launched impl_1...
+Run output will be captured here: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/impl_1/runme.log
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Sun Apr 24 18:08:24 2022] Launched synth_1...
+Run output will be captured here: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/synth_1/runme.log
+[Sun Apr 24 18:08:24 2022] Launched impl_1...
+Run output will be captured here: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Sun Apr 24 18:15:51 2022] Launched synth_1...
+Run output will be captured here: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/synth_1/runme.log
+[Sun Apr 24 18:15:51 2022] Launched impl_1...
+Run output will be captured here: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Sun Apr 24 18:21:52 2022] Launched synth_1...
+Run output will be captured here: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/synth_1/runme.log
+[Sun Apr 24 18:21:52 2022] Launched impl_1...
+Run output will be captured here: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Sun Apr 24 18:26:25 2022] Launched synth_1...
+Run output will be captured here: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/synth_1/runme.log
+[Sun Apr 24 18:26:25 2022] Launched impl_1...
+Run output will be captured here: C:/Users/txzing/Desktop/modbus_rtu_slave_rtl/vivado/vivado_proj/vivado_proj.runs/impl_1/runme.log
+close_design
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Apr 24 18:28:13 2022...
