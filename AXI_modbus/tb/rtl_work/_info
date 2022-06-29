@@ -1,0 +1,313 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/workdir/modbus/modbus_rtu_slave_rtl/tb
+T_opt
+!s110 1656465878
+VBDe9]Y6;i^7GlkQ6>@K4d1
+Z1 04 23 4 work modbus_rtu_slave_top_tb fast 0
+=1-7486e20e663b-62bba9d5-db-58f0
+Z2 o-quiet -auto_acc_if_foreign -work work +acc
+Z3 tCvgOpt 0
+n@_opt
+Z4 OL;O;10.7;67
+R0
+T_opt1
+!s110 1656473764
+VTRJ>kllmK_7hNWPn:HS7]1
+R1
+=1-7486e20e663b-62bbc8a3-3a9-2474
+R2
+R3
+n@_opt1
+R4
+R0
+T_opt2
+Z5 !s110 1656484926
+VXVX4HF52QQ15f6ZUn6]`P0
+R1
+=1-7486e20e663b-62bbf43e-33f-3a68
+R2
+R3
+n@_opt2
+R4
+vcrc_16
+R5
+!i10b 1
+!s100 4XdhZUzi5T?:LUX@5HGk=1
+ICOZnEJ8?i^@JZRQP8;b9d0
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 dD:/workdir/modbus/AXI_modbus/tb
+Z8 w1656465805
+8./hdl/crc_16.v
+F./hdl/crc_16.v
+L0 16
+Z9 OL;L;10.7;67
+r1
+!s85 0
+31
+Z10 !s108 1656484926.000000
+!s107 ./hdl/crc_16.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|./hdl/crc_16.v|
+!i113 0
+Z11 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vct_15t_gen
+Z12 !s110 1656484925
+!i10b 1
+!s100 7goZlmDHOeVF2jRX<^H4?2
+IK2;ZGTNoF54ocQ?4oa3Yo0
+R6
+R7
+R8
+8./hdl/ct_15t_gen.v
+F./hdl/ct_15t_gen.v
+L0 4
+R9
+r1
+!s85 0
+31
+Z13 !s108 1656484925.000000
+!s107 ./hdl/ct_15t_gen.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|./hdl/ct_15t_gen.v|
+!i113 0
+R11
+R3
+vct_35t_gen
+R12
+!i10b 1
+!s100 KzIbBdml<Vk>I=nh^?KhX0
+IV1:ezO4KF<_g6]XX:`D3c1
+R6
+R7
+R8
+8./hdl/ct_35t_gen.v
+F./hdl/ct_35t_gen.v
+L0 4
+R9
+r1
+!s85 0
+31
+R13
+!s107 ./hdl/ct_35t_gen.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|./hdl/ct_35t_gen.v|
+!i113 0
+R11
+R3
+vDPRAM
+R5
+!i10b 1
+!s100 7OYm;D3jGV6zaZTFchETb0
+IL[8YU:2:P9ai8:oh;_Dl83
+R6
+R7
+R8
+8./hdl/DPRAM.v
+F./hdl/DPRAM.v
+L0 4
+R9
+r1
+!s85 0
+31
+R10
+!s107 ./hdl/DPRAM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|./hdl/DPRAM.v|
+!i113 0
+R11
+R3
+n@d@p@r@a@m
+vexceptions
+R5
+!i10b 1
+!s100 SaQl==VWFdGg5VPIofNW70
+I=kFZPeM8obD:PIJY]5VbG2
+R6
+R7
+w1656472156
+8./hdl/exceptions.v
+F./hdl/exceptions.v
+L0 4
+R9
+r1
+!s85 0
+31
+R10
+!s107 ./hdl/exceptions.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|./hdl/exceptions.v|
+!i113 0
+R11
+R3
+vframe_rx
+R5
+!i10b 1
+!s100 kbVFbVVE[DI8aaEl4BSnB0
+I@>NeQ1:Vd:ZnjTRU6hRiP1
+R6
+R7
+R8
+8./hdl/frame_rx.v
+F./hdl/frame_rx.v
+L0 4
+R9
+r1
+!s85 0
+31
+R13
+!s107 ./hdl/frame_rx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|./hdl/frame_rx.v|
+!i113 0
+R11
+R3
+vfunc_hander
+R5
+!i10b 1
+!s100 Mz47bN^2BQ=BkKgaP9@db3
+ITCBRPhd2USMom;jI>BnVC3
+R6
+R7
+w1656479483
+8./hdl/func_handler.v
+F./hdl/func_handler.v
+L0 4
+R9
+r1
+!s85 0
+31
+R10
+!s107 ./hdl/func_handler.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|./hdl/func_handler.v|
+!i113 0
+R11
+R3
+vmodbus_crc_16
+R5
+!i10b 1
+!s100 C>^@oBFfC3MRN;Q:OYX_G1
+I0HK@7ZAV2I1UKVD8BJ3G71
+R6
+R7
+w1656476955
+8./hdl/modbus_crc_16.v
+F./hdl/modbus_crc_16.v
+L0 10
+R9
+r1
+!s85 0
+31
+R10
+!s107 ./hdl/modbus_crc_16.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|./hdl/modbus_crc_16.v|
+!i113 0
+R11
+R3
+vmodbus_rtu_slave_top
+R5
+!i10b 1
+!s100 7`NY=bNBd2fBD[nzgOaKg0
+IzVnEbY5bL=2hWI>>7YnQm1
+R6
+R7
+w1656475941
+8./hdl/modbus_rtu_slave_top.v
+F./hdl/modbus_rtu_slave_top.v
+L0 4
+R9
+r1
+!s85 0
+31
+R10
+!s107 ./hdl/modbus_rtu_slave_top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|./hdl/modbus_rtu_slave_top.v|
+!i113 0
+R11
+R3
+vmodbus_rtu_slave_top_tb
+R5
+!i10b 1
+!s100 VM2k0X<9VMS>e4G8I^7RN1
+IGVOSd3SFJ38BOWOfJZnUP2
+R6
+R7
+w1656480294
+8./modbus_rtu_slave_top_tb.v
+F./modbus_rtu_slave_top_tb.v
+L0 4
+R9
+r1
+!s85 0
+31
+R10
+!s107 ./modbus_rtu_slave_top_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|./modbus_rtu_slave_top_tb.v|
+!i113 0
+R11
+R3
+vtx_response
+R5
+!i10b 1
+!s100 RO<56L<_EeVgNhAmR_P;<3
+IP5^7@LL=iNZic9czGO`:S1
+R6
+R7
+w1656479735
+8./hdl/tx_response.v
+F./hdl/tx_response.v
+L0 4
+R9
+r1
+!s85 0
+31
+R10
+!s107 ./hdl/tx_response.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|./hdl/tx_response.v|
+!i113 0
+R11
+R3
+vuart_byte_rx
+R12
+!i10b 1
+!s100 4h6YnH<cR_7W<iIk>oKzX0
+Ig^cYb<BJaEcbAnY<V3_AT1
+R6
+R7
+R8
+8./hdl/uart_byte_rx.v
+F./hdl/uart_byte_rx.v
+L0 4
+R9
+r1
+!s85 0
+31
+R13
+!s107 ./hdl/uart_byte_rx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|./hdl/uart_byte_rx.v|
+!i113 0
+R11
+R3
+vuart_byte_tx
+R12
+!i10b 1
+!s100 eh_Z_aThO`7E^kga3akO@2
+IE_mVTWio^F^[Bmm8Bhkg81
+R6
+R7
+R8
+8./hdl/uart_byte_tx.v
+F./hdl/uart_byte_tx.v
+L0 4
+R9
+r1
+!s85 0
+31
+R13
+!s107 ./hdl/uart_byte_tx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|./hdl/uart_byte_tx.v|
+!i113 0
+R11
+R3
