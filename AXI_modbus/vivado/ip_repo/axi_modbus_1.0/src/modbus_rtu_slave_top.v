@@ -301,7 +301,7 @@ always @(posedge clk or negedge rst_n)begin
     begin 
         reg_03_01_update <= `UD 1'b1;       
     end 
-    else if(end_cnt && reg_03_01_update) 
+    else if(end_cnt) 
     begin 
         reg_03_01_update <= `UD 1'b0;      
     end 

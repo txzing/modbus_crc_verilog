@@ -4,11 +4,12 @@
 module modbus_rtu_slave_top #
 (
     parameter           CLK_FREQ   = 'd50000000, // 50MHz
-    parameter           BAUD_RATE  = 'd115200    //
+    parameter           BAUD_RATE  = 'd115200  ,  //
+    parameter           INTR_CLOCK = 5 
 )
 (
     input                   clk             ,			// system clock
-    input                   rst_n           ,		// system reset, active low
+    input                   rst_n           ,		    // system reset, active low
 
     input   [7:0]           dev_addr        ,
     input   [15:0]          read_04_01      ,
@@ -29,7 +30,7 @@ module modbus_rtu_slave_top #
 
 
     output  wire    [15:0]  reg_03_01_o     ,
-    output  wire            reg_03_01_update,
+    output  reg             reg_03_01_update,
     
     input                   rs485_rx        ,
     output  wire            rs485_tx        ,
@@ -41,6 +42,11 @@ module modbus_rtu_slave_top #
 wire    [7:0] rx_data  ;
 wire    rx_done        ;
 wire    rx_state       ;
+
+//对03寄存器更新后，产生一定时延的中断信号
+reg  [7:0]  cnt     ;
+wire        add_cnt ;
+wire        end_cnt ;
 
 uart_byte_rx #
 (
@@ -184,33 +190,6 @@ func_hander func_handler_inst0
 );
 
 
-always@(posedge clk or negedge rst_n)
-begin
-    if( !rst_n )
-    begin
-        read_03_01_r <= `UD 16'h0;// modify if needed
-        reg_w_done <= `UD 1'b0;
-        reg_w_status <= `UD 1'b0;
-    end
-    else
-    begin
-        if(reg_wen)
-        begin
-            read_03_01_r <= `UD reg_wdat;
-            reg_w_done <= `UD 1'b1;
-            reg_w_status <= `UD 1'b0;
-        end
-        else
-        begin
-            read_03_01_r <= `UD read_03_01_r;
-            reg_w_done <= `UD 1'b0;
-            reg_w_status <= `UD 1'b0;
-        end
-    end
-end
-assign reg_03_01_o = read_03_01_r;
-assign reg_03_01_update = reg_w_done;
-
 wire  [15:0] tx_data_b;
 wire  [7:0]  tx_addr  ;
 
@@ -285,5 +264,68 @@ u_tx_response(
     .rs485_tx           (rs485_tx           ),
     .rs485_tx_en        (rs485_oe           )
 );
+
+always@(posedge clk or negedge rst_n)
+begin
+    if( !rst_n )
+    begin
+        read_03_01_r <= `UD 16'h0;// modify if needed
+        reg_w_done <= `UD 1'b0;
+        reg_w_status <= `UD 1'b0;
+    end
+    else
+    begin
+        if(reg_wen)
+        begin
+            read_03_01_r <= `UD reg_wdat;
+            reg_w_done <= `UD 1'b1;
+            reg_w_status <= `UD 1'b0;
+        end
+        else
+        begin
+            read_03_01_r <= `UD read_03_01_r;
+            reg_w_done <= `UD 1'b0;
+            reg_w_status <= `UD 1'b0;
+        end
+    end
+end
+assign reg_03_01_o = read_03_01_r;
+
+
+always @(posedge clk or negedge rst_n)begin 
+    if( !rst_n )
+    begin
+        reg_03_01_update <= `UD 1'b0;
+    end 
+    else if(reg_w_done && !reg_03_01_update)
+    begin 
+        reg_03_01_update <= `UD 1'b1;       
+    end 
+    else if(end_cnt) 
+    begin 
+        reg_03_01_update <= `UD 1'b0;      
+    end 
+end
+
+always @(posedge clk or negedge rst_n)begin 
+   if(!rst_n)begin
+        cnt <= 0;
+    end 
+    else if(add_cnt)begin 
+            if(end_cnt)begin 
+                cnt <= 0;
+            end
+            else begin 
+                cnt <= cnt + 1;
+            end 
+    end
+   else  begin
+       cnt <= cnt;
+    end
+end 
+
+assign add_cnt = reg_03_01_update;
+assign end_cnt = add_cnt && cnt == INTR_CLOCK-1;
+
 
 endmodule

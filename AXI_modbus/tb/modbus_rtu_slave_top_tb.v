@@ -132,6 +132,19 @@ begin
     send_frame(64'h01_06_0001_0007_99c8);  
     @(posedge response_done)
 
+
+    #(`clk_period*20000)
+    send_frame(64'h01_06_0001_0010_d9c6);  
+    @(posedge response_done)
+
+    #(`clk_period*20000)
+    send_frame(64'h01_06_0001_0005_1809);  
+    @(posedge response_done)
+
+    #(`clk_period*20000)
+    send_frame(64'h01_06_0001_0014_d805);  
+    @(posedge response_done)
+
     #(`clk_period*20000)
     send_frame(64'h01_03_0001_0001_d5ca);  
     @(posedge response_done)
