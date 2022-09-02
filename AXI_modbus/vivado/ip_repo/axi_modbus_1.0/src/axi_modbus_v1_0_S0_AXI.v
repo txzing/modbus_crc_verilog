@@ -767,6 +767,9 @@
         .rs485_oe               (rs485_oe           )
         
 	);
+
+assign   intr =  reg_03_01_update;
+
 	// User logic ends
 
 	endmodule
