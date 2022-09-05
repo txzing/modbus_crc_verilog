@@ -11,10 +11,10 @@ INCLUDES=-I./. -I${INCLUDEDIR}
 
 INCLUDEFILES=*.h
 LIBSOURCES=*.c
-OUTS = *.o
+OUTS = $(addsuffix .o, $(basename $(wildcard *.c)))
 
 libs:
-	echo "Compiling axi_modbus..."
+	echo "Compiling AXI_LITE_REG..."
 	$(COMPILER) $(COMPILER_FLAGS) $(EXTRA_COMPILER_FLAGS) $(INCLUDES) $(LIBSOURCES)
 	$(ARCHIVER) -r ${RELEASEDIR}/${LIB} ${OUTS}
 	make clean
